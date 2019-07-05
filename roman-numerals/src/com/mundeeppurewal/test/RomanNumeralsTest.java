@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RomanNumeralsTest {
 
-    private RomanNumerals romanNumerals;// = new RomanNumerals();
+    private RomanNumerals romanNumerals;
 
     @BeforeEach
     public void setUp() {
@@ -77,6 +77,16 @@ public class RomanNumeralsTest {
     }
 
     @Test
+    void generateRomanNumerals_testForNumber15_ShouldReturnXV() {
+        assertEquals("XV", romanNumerals.generateRomanNumerals(15));
+    }
+
+    @Test
+    void generateRomanNumerals_testForNumber17_ShouldReturnXVII() {
+        assertEquals("XVII", romanNumerals.generateRomanNumerals(17));
+    }
+
+    @Test
     void generateRomanNumerals_testForNumber19_ShouldReturnXIX() {
         assertEquals("XIX", romanNumerals.generateRomanNumerals(19));
     }
@@ -116,9 +126,15 @@ public class RomanNumeralsTest {
     void generateRomanNumerals_testForNumber400_ShouldReturnCDXLV() {
         assertEquals("CD", romanNumerals.generateRomanNumerals(400));
     }
+
     @Test
     void generateRomanNumerals_testForNumber445_ShouldReturnCDXLV() {
         assertEquals("CDXLV", romanNumerals.generateRomanNumerals(445));
+    }
+
+    @Test
+    void generateRomanNumerals_testForNumber483_ShouldReturnCDLXXXIII() {
+        assertEquals("CDLXXXIII", romanNumerals.generateRomanNumerals(483));
     }
 
     @Test
@@ -127,34 +143,24 @@ public class RomanNumeralsTest {
     }
 
     @Test
+    void generateRomanNumerals_testForNumber623_ShouldReturnDCXXIII() {
+        assertEquals("DCXXIII", romanNumerals.generateRomanNumerals(623));
+    }
+
+    @Test
     void generateRomanNumerals_testForNumber700_ShouldReturnDCC() {
         assertEquals("DCC", romanNumerals.generateRomanNumerals(700));
     }
+
+    @Test
+    void generateRomanNumerals_testForNumber834_ShouldReturnDCCCXXXIV() {
+        assertEquals("DCCCXXXIV", romanNumerals.generateRomanNumerals(834));
+    }
+
+
     @Test
     void generateRomanNumerals_testForNumber997_ShouldReturnCMXCVII() {
         assertEquals("CMXCVII", romanNumerals.generateRomanNumerals(997));
-    }
-
-
-
-    @Test
-    void generateRomanNumerals_testForNumbe40_ShouldReturnXL() {
-        assertEquals("I", romanNumerals.generateRomanNumerals(1));
-    }
-
-    @Test
-    void generateRomanNumerals_testForNumbe90_ShouldReturnXC() {
-        assertEquals("I", romanNumerals.generateRomanNumerals(1));
-    }
-
-    @Test
-    void generateRomanNumerals_testForNumbe400_ShouldReturnCD() {
-        assertEquals("I", romanNumerals.generateRomanNumerals(1));
-    }
-
-    @Test
-    void generateRomanNumerals_testForNumbe900_ShouldReturnCM() {
-        assertEquals("I", romanNumerals.generateRomanNumerals(1));
     }
 
     @Test

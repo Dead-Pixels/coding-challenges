@@ -97,6 +97,11 @@ public class RomanNumeralsTest {
     }
 
     @Test
+    void generateRomanNumerals_testForNumber33_ShouldReturnXXXIII() {
+        assertEquals("XXXIII", romanNumerals.generateRomanNumerals(33));
+    }
+
+    @Test
     void generateRomanNumerals_testForNumber40_ShouldReturnXL() {
         assertEquals("XL", romanNumerals.generateRomanNumerals(40));
     }

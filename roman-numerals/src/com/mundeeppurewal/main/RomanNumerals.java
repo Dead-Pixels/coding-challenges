@@ -18,7 +18,6 @@ public class RomanNumerals {
         StringBuilder romanNumerals = new StringBuilder();
 
         if (number / 1000 > 0) {
-            //As there is a patt
             romanNumerals.append(createNumeralBlockOFUnits(number, THOUSANDS));
             number -= ((number / 1000) * 1000);
         }
@@ -36,25 +35,23 @@ public class RomanNumerals {
         return romanNumerals.toString();
     }
 
-//
-
     public String createNumeralBlockOFUnits(int number, int unit) {
         String numeral = "";
-        int numberOfHundreds = number / unit;
+        int numberOfUnits = number / unit;
 
-        for (int i = 0; i < numberOfHundreds; i++) {
-            if (numberOfHundreds == 4) {
+        for (int i = 0; i < numberOfUnits; i++) {
+            if (numberOfUnits == 4) {
                 numeral += (getNumberal(1 * unit) + getNumberal(5 * unit));
                 break;
-            } else if (numberOfHundreds == 9) {
+            } else if (numberOfUnits == 9) {
                 numeral += (getNumberal(1 * unit) + getNumberal(10 * unit));
                 break;
-            } else if (numberOfHundreds == 5) {
+            } else if (numberOfUnits == 5) {
                 numeral += getNumberal(5 * unit);
                 break;
-            } else if (numberOfHundreds >= 5 && numberOfHundreds < 9) {
+            } else if (numberOfUnits >= 5 && numberOfUnits < 9) {
                 numeral += getNumberal(5 * unit);
-                numberOfHundreds -= 5;
+                numberOfUnits -= 5;
             }
             numeral += getNumberal(1 * unit);
         }

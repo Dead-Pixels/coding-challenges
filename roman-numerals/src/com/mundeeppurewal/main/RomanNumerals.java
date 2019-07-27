@@ -18,24 +18,25 @@ public class RomanNumerals {
         StringBuilder romanNumerals = new StringBuilder();
 
         if (number / 1000 > 0) {
-            romanNumerals.append(createNumeralBlockOfUnits(number, THOUSANDS));
+            romanNumerals.append(createBlockOfNumeralUnits(number, THOUSANDS));
             number -= ((number / 1000) * 1000);
         }
         if (number / 100 > 0) {
-            romanNumerals.append(createNumeralBlockOfUnits(number, HUNDREDS));
+            romanNumerals.append(createBlockOfNumeralUnits(number, HUNDREDS));
             number -= ((number / 100) * 100);
         }
         if (number / 10 > 0) {
-            romanNumerals.append(createNumeralBlockOfUnits(number, TENS));
+            romanNumerals.append(createBlockOfNumeralUnits(number, TENS));
             number -= ((number / 10) * 10);
         }
         if (number > 0) {
-            romanNumerals.append(createNumeralBlockOfUnits(number, ONES));
+            romanNumerals.append(createBlockOfNumeralUnits(number, ONES));
         }
         return romanNumerals.toString();
     }
 
-    public String createNumeralBlockOfUnits(int number, int unit) {
+    public String createBlockOfNumeralUnits(int number, int unit) {
+        //Create blocks of 1000s, 100s, 10s, 1's based on unit provided and returns block to be appended to numeral String
         String numeral = "";
         int numberOfUnits = number / unit;
 

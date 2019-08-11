@@ -1,6 +1,5 @@
 package com.mundeeppurewal.GameBoard.Test;
 
-import com.mundeeppurewal.GameBoard.GameBoard;
 import com.mundeeppurewal.GameBoard.Main.GameOfLife;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +19,7 @@ public class GameOfLifeTest {
         String gameBoard[][] = {{"-","-","-","-","-","-","-","-"},
                                 {"-","-","-","-","-","-","-","-"},
                                 {"-","-","-","O","-","-","-","-"},
-                                {"-","-","-","-","-","-","-","-"},
+                                {"-","-","O","O","-","-","-","-"},
                                 {"-","-","-","-","-","-","-","-"},
                                 {"-","-","-","-","-","-","-","-"},
                                 {"-","-","-","-","-","O","-","-"},
@@ -29,8 +28,11 @@ public class GameOfLifeTest {
 
         GameOfLife gameOfLife = new GameOfLife(gameBoard);
 
+        gameOfLife.printGame();
+
         gameOfLife.updatePopulationState();
 
+        gameOfLife.printGame();
 
 
 

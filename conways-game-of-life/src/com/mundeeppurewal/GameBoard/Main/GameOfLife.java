@@ -12,7 +12,6 @@ public class GameOfLife {
     }
 
     public void updatePopulationState() {
-
         for (int y = 0; y < gameBoard.length - 1; y++) {
             for (int x = 0; x < gameBoard.length - 1; x++) {
                 // Any live cell with fewer than two live neighbors dies, as if caused by under population.
@@ -37,10 +36,35 @@ public class GameOfLife {
 
     public int findNeighbours(String gameBoard[][], int y, int x) {
 
+        int numberOfNeighbours = 0;
 
+        int ROW_MAX_LENGTH = gameBoard.length - 1;
+        int COLUMN_MAX_LENGTH = gameBoard.length - 1;
+        int rightOfCurrentX = x + 1;
+
+        if (rightOfCurrentX <= ROW_MAX_LENGTH && gameBoard[y][rightOfCurrentX] != "-") {
+            numberOfNeighbours++;
+        }
+
+        int belowOfCurrentY = y + 1;
+        if (belowOfCurrentY <= COLUMN_MAX_LENGTH && gameBoard[belowOfCurrentY][x] != "-") {
+            numberOfNeighbours++;
+        }
+
+        int leftOfCurrentX = x - 1;
+        if (leftOfCurrentX >= 0 && gameBoard[leftOfCurrentX][y] != "-") {
+            numberOfNeighbours++;
+        }
+
+        int aboveOfCurrentY = y - 1;
+        if (aboveOfCurrentY >= 0 && gameBoard[aboveOfCurrentY][x] != "-") {
+            numberOfNeighbours++;
+        }
+
+        return numberOfNeighbours;
     }
 
-    @SuppressWarnings("All")
+
     public void printGame() {
         //initialize game board
         for (int y = 0; y < gameBoard.length; y++) {

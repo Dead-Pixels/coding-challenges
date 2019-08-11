@@ -5,15 +5,28 @@ public class GameBoard {
     private String gameboard[][] = new String[10][10];
 
     public GameBoard() {
-        //initialize game board
-        for (int x = 0; x <= gameboard.length - 1; x++) {
-            for (int y = 0; y <= gameboard.length - 1; y++) {
-                gameboard[y][x] = "-";
-            }
-        }
-        gameboard[5][5] = "O";
-        gameboard[5][4] = "O";
-        gameboard[4][4] = "O";
+//        //initialize game board
+//        for (int x = 0; x <= gameboard.length - 1; x++) {
+//            for (int y = 0; y <= gameboard.length - 1; y++) {
+//                gameboard[y][x] = "-";
+//            }
+//        }
+//        gameboard[5][5] = "O";
+//        gameboard[5][4] = "O";
+//        gameboard[4][4] = "O";
+
+        String gameboard[][] = { { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "O", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "O", "O", "O", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "O", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                                 { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+        };
     }
 
 
